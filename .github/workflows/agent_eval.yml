@@ -24,5 +24,7 @@ jobs:
         pip install -r requirements.txt
 
     - name: Run Multi-Agent State Evaluation
+      env:
+        PYTHONPATH: .
       run: |
-        pytest tests/ -v
+        python -m pytest tests/ -v
