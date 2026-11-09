@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: agentmesh-l2-api
+    env: docker
+    plan: free
+    dockerfilePath: Dockerfile
+    healthCheckPath: /docs
+    envVars:
+      - key: SIMULATION_MODE
+        value: "true"

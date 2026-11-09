@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  agentmesh-api:
+    build: .
+    container_name: agentmesh_l2_service
+    ports:
+      - "8001:8001"
+    environment:
+      - DEFAULT_MODEL=gemini/gemini-1.5-pro
+      - SIMULATION_MODE=true
+      - GEMINI_API_KEY=${GEMINI_API_KEY:-}
+      - OPENAI_API_KEY=${OPENAI_API_KEY:-}
+    restart: unless-stopped
